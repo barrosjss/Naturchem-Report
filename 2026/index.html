@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Propuesta Comercial - Naturchem</title>
+    <!-- Montserrat Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* InnoGrowth Color Palette */
+            --primary-dark: #2d0055;    /* Deep Purple for Headers/Borders */
+            --primary-vibrant: #6200ea; /* Vibrant Purple for Subheaders/Accents */
+            --primary-light: #b388ff;   /* Lighter accent */
+            --bg-accent: #f3e5f5;       /* Very light purple background */
+            --text-main: #333333;
+            --white: #ffffff;
+        }
+
+        @media print {
+            body { margin: 0; }
+            .page-break { page-break-before: always; }
+            @page { margin: 2cm; }
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.5;
+            color: var(--text-main);
+            max-width: 21cm;
+            margin: 0 auto;
+            padding: 30px;
+            background: var(--white);
+            font-size: 11pt;
+        }
+        
+        .portada {
+            text-align: center;
+            padding: 80px 40px; /* Reduced vertical padding, added horizontal */
+            border: 2px solid var(--primary-dark); /* Thinner border for elegance */
+            margin-bottom: 60px; /* Increased bottom margin */
+            border-radius: 8px; /* Soften corners */
+        }
+        
+        .portada h1 {
+            color: var(--primary-dark);
+            font-size: 36pt; /* Slightly larger */
+            margin: 0 0 30px 0; /* Increased bottom margin */
+            font-weight: 800; /* Bolder */
+            text-transform: uppercase;
+            letter-spacing: 2px; /* Add breathing room to text */
+            line-height: 1.2;
+        }
+        
+        .portada h2 {
+            color: var(--primary-vibrant);
+            font-size: 22pt;
+            margin: 0 0 30px 0; /* Reduced from 60px */
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+        
+        .portada-info {
+            margin-top: 20px; /* Reduced from 60px */
+            font-size: 13pt; 
+            color: #555;
+            line-height: 1.4; /* Reduced line height */
+        }
+        
+        .portada-info p {
+            margin: 4px 0; /* Significantly reduced from 12px */
+        }
+        
+        h2 {
+            color: var(--primary-dark);
+            font-size: 16pt;
+            font-weight: 700;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid var(--primary-vibrant);
+        }
+        
+        h3 {
+            color: var(--primary-vibrant);
+            font-size: 13pt;
+            font-weight: 700;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        
+        h4 {
+            color: #444;
+            font-size: 11pt;
+            font-weight: 600;
+            margin-top: 15px;
+            margin-bottom: 8px;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 10pt;
+        }
+        
+        table th {
+            background-color: var(--primary-dark);
+            color: var(--white);
+            padding: 10px;
+            text-align: left;
+            font-weight: 600;
+        }
+        
+        table td {
+            padding: 8px 10px;
+            border: 1px solid #ddd;
+        }
+        
+        table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        
+        .highlight-box {
+            background-color: var(--bg-accent);
+            border-left: 4px solid var(--primary-vibrant);
+            padding: 15px;
+            margin: 20px 0;
+        }
+        
+        .warning-box {
+            background-color: #fff4e6;
+            border-left: 4px solid #ff9800;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        
+        .success-box {
+            background-color: #e8f5e9;
+            border-left: 4px solid #4caf50;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        
+        ul {
+            margin: 10px 0;
+            padding-left: 25px;
+        }
+        
+        li {
+            margin: 5px 0;
+        }
+        
+        .precio-total {
+            font-size: 14pt;
+            font-weight: 700;
+            color: var(--primary-dark);
+            text-align: right;
+            margin: 20px 0;
+        }
+        
+        .firma-section {
+            margin-top: 40px;
+            border-top: 2px solid var(--primary-dark);
+            padding-top: 20px;
+        }
+        
+        .firma-box {
+            display: inline-block;
+            width: 48%;
+            vertical-align: top;
+            margin-top: 20px;
+        }
+        
+        .firma-line {
+            border-bottom: 1px solid #333;
+            margin: 30px 0 5px 0;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #ddd;
+            color: #666;
+            font-size: 10pt;
+            font-style: italic;
+        }
+        
+        .print-button {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: var(--primary-vibrant);
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 14pt;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+            z-index: 1000;
+            transition: background-color 0.3s;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+        }
+        
+        .print-button:hover {
+            background-color: var(--primary-dark);
+        }
+        
+        @media print {
+            .print-button { display: none; }
+        }
+        
+        .contact-header {
+            background-color: #f0f4f8;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <button class="print-button" onclick="window.print()">🖨️ Imprimir / Guardar PDF</button>
+
+    <!-- PORTADA -->
+    <div class="portada">
+        <h1>PROPUESTA COMERCIAL</h1>
+        <h2>EXPANSIÓN DIGITAL INTEGRAL<br>NATURCHEM</h2>
+        
+        <div class="portada-info">
+            <p><strong>Presentado por:</strong> InnoGrowth Consulting</p>
+            <p><strong>Fecha:</strong> 21 de Enero de 2026</p>
+            <p><strong>Válida hasta:</strong> 20 de Febrero de 2026</p>
+            <p style="margin-top: 30px;"><strong>Contacto:</strong></p>
+            <p>Jesús Reinaldo Barros Bolívar</p>
+            <p>📱 3004986307</p>
+            <p>📧 jesusr.barrosb@gmail.com</p>
+        </div>
+    </div>
+
+    <div class="page-break"></div>
+
+    <!-- CONTEXTO -->
+    <h2>CONTEXTO Y OBJETIVOS DEL PROYECTO</h2>
+    
+    <p>Naturchem se encuentra en un momento estratégico de expansión digital, buscando consolidar su presencia en múltiples canales de venta online y fortalecer su relación con clientes mediante contenido educativo de valor.</p>
+    
+    <h3>Objetivos del Proyecto</h3>
+    <ul>
+        <li>Desarrollar marketplace propio con todo el portafolio de productos</li>
+        <li>Expandir presencia en plataformas como Mercado Libre y Facebook Marketplace</li>
+        <li>Crear contenido educativo (cursos gratuitos) para acercamiento con clientes</li>
+        <li>Implementar estrategia de pauta en Google Ads</li>
+        <li>Profesionalizar la presentación visual de productos en todos los canales</li>
+    </ul>
+
+    <div class="page-break"></div>
+
+    <!-- SERVICIO 1 -->
+    <h2>SERVICIO 1: FOTOGRAFÍA PROFESIONAL DE PRODUCTOS</h2>
+    
+    <h3>Sesión Fotográfica Completa por Producto</h3>
+    
+    <h4>Incluye por cada producto:</h4>
+    <ul>
+        <li>6 fotografías profesionales en alta resolución (mínimo 3000x3000px)</li>
+        <li>Fondo blanco puro (estándar marketplace) + 2 fotos con fondo de contexto</li>
+        <li>Diferentes ángulos: frontal, lateral, superior, detalle de etiqueta, uso/aplicación</li>
+        <li>Iluminación profesional con softbox y luces difusoras</li>
+        <li>Edición y retoque: corrección de color, eliminación de imperfecciones, recorte</li>
+        <li>Optimización para web: versiones ligeras para carga rápida + alta resolución para zoom</li>
+        <li>Entrega en múltiples formatos: JPG alta resolución, PNG sin fondo, WebP optimizado</li>
+        <li>Derechos de uso ilimitados en todos los canales digitales</li>    </ul>
+
+    <h3>Estructura de Precios por Volumen</h3>
+    
+    <table>
+        <thead>
+            <tr>
+                <th>Cantidad de Productos</th>
+                <th>Precio por Producto</th>
+                <th>Ejemplo Total</th>
+                <th>Ahorro</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1 - 10 productos</td>
+                <td>$45,000</td>
+                <td>10 prod. = $450,000</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>11 - 30 productos</td>
+                <td>$38,000</td>
+                <td>30 prod. = $1,140,000</td>
+                <td>15%</td>
+            </tr>
+            <tr>
+                <td>31 - 50 productos</td>
+                <td>$32,000</td>
+                <td>50 prod. = $1,600,000</td>
+                <td>29%</td>
+            </tr>
+            <tr>
+                <td>51 - 100 productos</td>
+                <td>$28,000</td>
+                <td>100 prod. = $2,800,000</td>
+                <td>38%</td>
+            </tr>
+            <tr>
+                <td>+100 productos</td>
+                <td>$25,000</td>
+                <td>Cotización especial</td>
+                <td>44%</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="highlight-box">
+        <strong>RECOMENDACIÓN PARA NATURCHEM:</strong><br>
+        50 productos fotografiados = $1,600,000<br>
+        Esta cantidad permite cubrir el portafolio principal con excelente relación costo-beneficio.
+    </div>
+
+    <div class="page-break"></div>
+
+    <!-- SERVICIO 2 -->
+    <h2>SERVICIO 2: MONTAJE Y GESTIÓN DE PRODUCTOS EN MARKETPLACES</h2>
+    
+    <h3>Carga y Optimización por Producto</h3>
+    
+    <h4>Incluye por cada producto en cada plataforma:</h4>
+    <ul>
+        <li>Creación de ficha de producto completa con título optimizado (SEO)</li>
+        <li>Descripción detallada y persuasiva adaptada a cada marketplace</li>
+        <li>Categorización correcta según taxonomía de la plataforma</li>
+        <li>Carga de todas las imágenes en orden estratégico</li>
+        <li>Configuración de variantes (tamaños, presentaciones, etc.)</li>
+        <li>Especificaciones técnicas y fichas de seguridad (si aplica)</li>
+        <li>Configuración de inventario y precios</li>
+        <li>Keywords y etiquetas para mejor posicionamiento interno</li>
+        <li>Configuración de envíos y métodos de pago</li>
+    </ul>
+
+    <h3>Precios por Plataforma</h3>
+    
+    <table>
+        <thead>
+            <tr>
+                <th>Plataforma</th>
+                <th>Precio por Producto</th>
+                <th>Tiempo</th>
+                <th>Observaciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Página Web Propia</td>
+                <td>$8,000</td>
+                <td>15-20 min</td>
+                <td>Incluye SEO básico</td>
+            </tr>
+            <tr>
+                <td>Mercado Libre</td>
+                <td>$12,000</td>
+                <td>20-25 min</td>
+                <td>Optimización para algoritmo ML</td>
+            </tr>
+            <tr>
+                <td>Facebook Marketplace</td>
+                <td>$7,000</td>
+                <td>10-15 min</td>
+                <td>Conexión con catálogo FB</td>
+            </tr>
+            <tr>
+                <td>Otras plataformas</td>
+                <td>$10,000</td>
+                <td>15-20 min</td>
+                <td>Según complejidad</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3>PAQUETES MULTIPLATAFORMA</h3>
+
+    <h4>PAQUETE BÁSICO - 1 Plataforma</h4>
+    <p><strong>Desde $8,000 por producto</strong></p>
+    <ul>
+        <li>Montaje en 1 canal de tu elección</li>
+        <li>Optimización básica</li>
+        <li>Entrega en 2-3 días hábiles</li>
+    </ul>
+
+    <h4>PAQUETE MULTIPRESENCIA - 3 Plataformas (RECOMENDADO)</h4>
+    <p><strong>$25,000 por producto (ahorro 24%)</strong></p>
+    <ul>
+        <li>Web + Mercado Libre + Facebook</li>
+        <li>Optimización avanzada por plataforma</li>
+        <li>Descripción adaptada a cada canal</li>
+        <li>Entrega en 3-4 días hábiles</li>
+        <li>Ahorro de $8,000 por producto</li>
+    </ul>
+
+    <h4>PAQUETE OMNICANAL - 5+ Plataformas</h4>
+    <p><strong>$38,000 por producto (ahorro 32%)</strong></p>
+    <ul>
+        <li>Todas las plataformas disponibles</li>
+        <li>Estrategia cross-channel</li>
+        <li>Gestión de inventario unificado</li>
+        <li>Soporte prioritario</li>
+        <li>Máxima visibilidad</li>
+    </ul>
+
+    <div class="highlight-box">
+        <strong>RECOMENDACIÓN ESTRATÉGICA:</strong><br>
+        Para Naturchem, recomendamos el Paquete Multipresencia (3 plataformas) comenzando con: Página Web Propia, Mercado Libre y Facebook Marketplace. Esto maximiza la visibilidad con una inversión moderada.<br><br>
+        <strong>50 productos en 3 plataformas = $1,250,000</strong>
+    </div>
+
+    <div class="page-break"></div>
+
+    <!-- SERVICIO 3 -->
+    <h2>SERVICIO 3: PRODUCCIÓN DE CURSOS EDUCATIVOS EN VIDEO</h2>
+    
+    <h3>Producción Profesional de Contenido Educativo</h3>
+    
+    <h4>Paquete completo por curso incluye:</h4>
+    <ul>
+        <li>Pre-producción: Reunión de conceptualización, guión técnico, estructura pedagógica</li>
+        <li>Grabación profesional: Cámara, iluminación, audio con micrófono</li>
+        <li>Locación: En las instalaciones de Naturchem</li>
+        <li>Post-producción: Edición, color grading, efectos de transición, motion graphics</li>
+        <li>Elementos gráficos: Intro/outro personalizado, lower thirds, animaciones explicativas</li>
+        <li>Subtítulos: Subtitulado completo en español (aumenta retención 40%)</li>
+        <li>Música de fondo: Biblioteca de música libre de derechos</li>
+        <li>Optimización para plataforma: Formatos para YouTube, web, redes sociales</li>
+        <li>Miniaturas personalizadas: Opciones de thumbnail para cada módulo</li>
+    </ul>
+
+    <h3>Precios por Tipo de Curso</h3>
+    
+    <table>
+        <thead>
+            <tr>
+                <th>Tipo de Curso</th>
+                <th>Duración Final</th>
+                <th>Módulos/Videos</th>
+                <th>Precio Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Curso Corto (Tema específico puntual)</td>
+                <td>15-30 minutos</td>
+                <td>3-5 videos</td>
+                <td>$850,000</td>
+            </tr>
+            <tr>
+                <td>Curso Medio (Tema desarrollado)</td>
+                <td>45-60 minutos</td>
+                <td>6-10 videos</td>
+                <td>$1,500,000</td>
+            </tr>
+            <tr>
+                <td>Curso Completo (Programa extenso)</td>
+                <td>90-120 minutos</td>
+                <td>12-20 videos</td>
+                <td>$2,800,000</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3>Precios por Video Individual</h3>
+    
+    <table>
+        <thead>
+            <tr>
+                <th>Duración</th>
+                <th>Complejidad</th>
+                <th>Precio</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>3-5 minutos</td>
+                <td>Simple (talking head + gráficos básicos)</td>
+                <td>$180,000</td>
+            </tr>
+            <tr>
+                <td>5-10 minutos</td>
+                <td>Media (demostraciones + animaciones)</td>
+                <td>$280,000</td>
+            </tr>
+            <tr>
+                <td>10-15 minutos</td>
+                <td>Alta (múltiples locaciones + motion graphics)</td>
+                <td>$420,000</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="highlight-box">
+        <strong>RECOMENDACIÓN PARA NATURCHEM:</strong><br>
+        Sugerimos comenzar con 3 Cursos Cortos sobre temas específicos de alto interés:<br><br>
+        
+        <strong>Paquete sugerido:</strong><br>
+        3 Cursos Cortos = $2,550,000<br>
+        Con descuento del 10% por volumen: <strong>$2,295,000</strong>
+    </div>
+
+    <h3>Cronograma de Producción</h3>
+    <ul>
+        <li><strong>Semana 1:</strong> Pre-producción (Reunión, guiones, aprobación)</li>
+        <li><strong>Semana 2:</strong> Grabación (1-2 días según módulos)</li>
+        <li><strong>Semana 3-4:</strong> Post-producción (Edición, efectos, subtitulado)</li>
+        <li><strong>Semana 5:</strong> Entrega y ajustes (Hasta 2 rondas incluidas)</li>
+    </ul>
+
+    <div class="page-break"></div>
+
+    <!-- SERVICIO 4 -->
+    <h2>SERVICIO 4: GESTIÓN DE CAMPAÑAS GOOGLE ADS</h2>
+    
+    <h3>Estrategia y Gestión Profesional de Pauta en Google</h3>
+    
+    <h4>Servicio mensual de gestión incluye:</h4>
+    <ul>
+        <li>Auditoría y estrategia inicial: Análisis de competencia, keywords, público objetivo</li>
+        <li>Configuración de campañas: Search Ads, Display, Shopping, Remarketing</li>
+        <li>Investigación de palabras clave: Keywords de alta intención de compra</li>
+        <li>Creación de anuncios: Mínimo 5 variaciones de copy por grupo</li>
+        <li>Configuración de extensiones: Sitelinks, llamadas, ubicación, promociones</li>
+        <li>Segmentación geográfica: Por ciudades, departamentos o nacional</li>
+        <li>Optimización diaria: Ajuste de pujas, pausar keywords de bajo rendimiento</li>
+        <li>Pruebas A/B continuas: Testing de anuncios, landing pages, audiencias</li>
+        <li>Implementación de conversiones: Tracking completo de leads, ventas, formularios</li>
+        <li>Remarketing inteligente: Recuperación de visitantes que no compraron</li>
+        <li>Reporte mensual detallado: Métricas, insights, recomendaciones</li>
+        <li>Reunión mensual de seguimiento: 1 hora de análisis y planeación</li>
+    </ul>
+
+    <h3>PAQUETE LANZAMIENTO GOOGLE ADS (3 MESES)</h3>
+    <p><strong>Fee mensual primer trimestre: $650,000/mes</strong></p>
+    
+    <h4>Incluye:</h4>
+    <ul>
+        <li><strong>Mes 1:</strong> Setup completo + optimización agresiva</li>
+        <li><strong>Mes 2:</strong> Refinamiento de audiencias</li>
+        <li><strong>Mes 3:</strong> Escalamiento de lo que funciona</li>
+        <li>Inversión publicitaria sugerida: $1.5M-$2M/mes</li>
+        <li>Soporte prioritario vía WhatsApp</li>
+    </ul>
+
+    <div class="page-break"></div>
+
+    <!-- RESUMEN INVERSIÓN -->
+    <h2>RESUMEN DE INVERSIÓN - PROPUESTA COMPLETA</h2>
+    
+    <h3>Desglose por Servicio</h3>
+    
+    <table>
+        <thead>
+            <tr>
+                <th>Servicio</th>
+                <th>Descripción</th>
+                <th>Inversión</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Fotografía de Productos</td>
+                <td>50 productos fotografiados</td>
+                <td>$1,600,000</td>
+            </tr>
+            <tr>
+                <td>Montaje Multiplataforma</td>
+                <td>50 productos en 3 plataformas</td>
+                <td>$1,250,000</td>
+            </tr>
+            <tr>
+                <td>Producción de Cursos</td>
+                <td>3 cursos cortos educativos</td>
+                <td>$2,295,000</td>
+            </tr>
+            <tr>
+                <td>Google Ads - Setup</td>
+                <td>Gestión mes 1 (lanzamiento)</td>
+                <td>$650,000</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="precio-total">
+        INVERSIÓN TOTAL INICIAL: $5,795,000
+    </div>
+
+    <p style="text-align: center; color: #666; margin-top: 10px;">
+        <em>Nota: Google Ads gestión meses subsiguientes: $650,000/mes<br>
+        (Inversión publicitaria en Google no incluida - pago directo a Google)</em>
+    </p>
+
+    <div class="page-break"></div>
+
+    <!-- PRÓXIMOS PASOS -->
+    <h2>PRÓXIMOS PASOS</h2>
+    
+    <h3>Para Iniciar el Proyecto:</h3>
+
+    <table>
+        <thead>
+            <tr>
+                <th style="width: 20%;">Paso</th>
+                <th>Descripción</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>PASO 1</strong></td>
+                <td><strong>Reunión de Alineación</strong><br>Agendar reunión para afinar detalles, definir prioridades y resolver dudas</td>
+            </tr>
+            <tr>
+                <td><strong>PASO 2</strong></td>
+                <td><strong>Firma de Contrato</strong><br>Formalización del acuerdo con términos y condiciones detalladas</td>
+            </tr>
+            <tr>
+                <td><strong>PASO 3</strong></td>
+                <td><strong>Pago Inicial</strong><br>Transferencia del anticipo según modalidad elegida</td>
+            </tr>
+            <tr>
+                <td><strong>PASO 4</strong></td>
+                <td><strong>Kick-off Meeting</strong><br>Reunión de lanzamiento con equipo completo para inicio de trabajos</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="page-break"></div>
+
+    <!-- FOOTER -->
+    <div class="footer">
+        <p style="font-size: 14pt; font-weight: bold; color: var(--primary-dark); margin-bottom: 20px;">
+            "Construyendo juntos el futuro digital de Naturchem"
+        </p>
+        <p>
+            Propuesta generada: 21 de enero de 2026<br>
+            Válida hasta: 20 de febrero de 2026
+        </p>
+    </div>
+
+</body>
+</html>
